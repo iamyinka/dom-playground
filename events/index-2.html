@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5));
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        #wrapper {
+            width: 60%;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+        }
+
+        .circle {
+            width: 20rem;
+            height: 20rem;
+            background-color: orange;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="intro">
+            <h1>Welcome to Circle Click Challenge</h1>
+            <h4>Click on the round ball to change its color randomly</h4>
+        </div>
+        <div class="circle">
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const newEl = document.createElement('h2');
+        const circle = document.querySelector('.circle');
+        const wrapper = document.querySelector("#wrapper");
+        newEl.textContent = "This is pure DOM Manipulation";
+
+        wrapper.appendChild(newEl)
+
+        circle.addEventListener('click', () => {
+            let colorRed = Math.floor((Math.random() * 255) + 1);
+            let colorGreen = Math.floor((Math.random() * 255) + 1);
+            let colorBlue = Math.floor((Math.random() * 255) + 1);
+
+            let randColor = `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+            console.log(randColor);
+            circle.style.backgroundColor = randColor;
+        })
+
+
+        // setInterval(changeColor, 1000)
+
+        // function changeColor() {
+        //     let colorRed = Math.floor((Math.random() * 255) + 1);
+        //     let colorGreen = Math.floor((Math.random() * 255) + 1);
+        //     let colorBlue = Math.floor((Math.random() * 255) + 1);
+
+        //     let randColor = `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+        //     console.log(randColor);
+        //     circle.style.backgroundColor = randColor;
+        // }
+    </script>
+</body>
+
+</html>

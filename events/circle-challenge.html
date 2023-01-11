@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Challenge</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            background: radial-gradient(rgba(0, 10, 10, .25), rgba(0, 0, 0, 0.5));
+            background-repeat: no-repeat;
+        }
+
+        main {
+            width: 60%;
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: #fff;
+        }
+
+        .circle {
+            width: 20rem;
+            height: 20rem;
+            background-color: orange;
+            margin: 0 auto;
+            border-radius: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="intro">
+            <h1>Welcome to Circle Click Challenge</h1>
+            <h2>Click on the round ball to change its color randomly</h2>
+        </div>
+        <div class="circle"></div>
+    </main>
+
+
+    <script>
+        const circle = document.querySelector('.circle');
+        const main = document.querySelector('main');
+        const subHeading = document.createElement('h2');
+        subHeading.textContent = "This is pure DOM Manipulation";
+
+        circle.addEventListener('click', () => {
+            let color1 = Math.floor((255 * Math.random()) + 1)
+            let color2 = Math.floor((255 * Math.random()) + 1)
+            let color3 = Math.floor((255 * Math.random()) + 1)
+            let randColor = `rgb(${color1}, ${color2}, ${color3})`;
+            circle.style.backgroundColor = randColor;
+            console.log(randColor);
+        })
+
+        // console.log(main.children[0].nextSibling.appendChild(subHeading));
+
+        main.appendChild(subHeading)
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse-over Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            width: 40rem;
+            height: 20rem;
+            background: linear-gradient(90deg, rgba(10, 110, 28, .2), rgba(10, 0, 10, .5));
+            /* margin: 3rem auto; */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dot {
+            background-color: #000;
+            width: .5rem;
+            height: .5rem;
+            position: absolute;
+            /* top: 2rem;
+            left: 2rem; */
+            max-width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- <div id="dot">
+
+        </div> -->
+    </div>
+
+
+
+    <div id="msg"></div>
+
+    <script>
+        const canvas = document.querySelector('#wrapper');
+        const msgBox = document.querySelector('#msg');
+        // const dotBox = document.createElement("div");
+        // dotBox.setAttribute('class', 'dot')
+
+        console.log(window);
+
+
+        canvas.addEventListener('mousemove', (e) => {
+            msgBox.textContent += "Hi "
+            const dotBox = document.createElement("div");
+            dotBox.setAttribute('class', 'dot')
+            dotBox.style.top = `${e.clientY}px`
+            dotBox.style.left = `${e.clientX}px`
+
+            canvas.appendChild(dotBox)
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

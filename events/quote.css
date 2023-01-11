@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 40%;
+  margin: 5px auto;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.quote {
+  background-color: lightblue;
+  padding: 0.85rem 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  border-top: 5px solid #009;
+}
+
+.quote-text h4 {
+  margin-bottom: 1.2rem;
+}
+
+.quote-close {
+  color: #b33;
+  cursor: pointer;
+}

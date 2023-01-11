@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            /* border-collapse: collapse; */
+        }
+
+        td {
+            background-color: #eeb;
+            width: 8rem;
+            height: 8rem;
+            text-align: center;
+        }
+
+        .bgRed {
+            background-color: #b33;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Click on the box to change it's color</h2>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+
+    <script>
+        let selectedNode = null;
+        const tableEl = document.querySelector('table');
+
+        tableEl.addEventListener('click', clickHandle, true);
+
+        function clickHandle(e) {
+
+            if (e.target.tagName == 'TD') {
+                if (selectedNode !== null) {
+                    console.log("Not null");
+                    selectedNode.classList.remove('bgRed')
+                }
+
+                const targetEl = e.target;
+                console.log("It's null");
+                targetEl.classList.add('bgRed')
+                selectedNode = targetEl;
+                console.log(targetEl, selectedNode);
+            } else {
+                console.log("not a td");
+            }
+        };
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+    <style>
+        main {
+            text-align: center;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>This is a really fun website</h1>
+
+        <p>Wally the Warthog is a great pet</p>
+
+        <p>Wally eats a lot of grass</p>
+
+        <button class="btnBlue">
+            How about make everything blue?
+        </button>
+
+        <button class="btnRed">
+            How about make everything red?
+        </button>
+    </main>
+
+
+    <script>
+
+        const btnBlue = document.querySelector('.btnBlue');
+        const btnRed = document.querySelector('.btnRed');
+        const main = document.querySelector('main');
+
+        btnRed.addEventListener('click', () => {
+            main.style.color = 'red';
+        })
+
+        btnBlue.addEventListener('click', () => {
+            main.style.color = 'blue';
+        }) 
+    </script>
+
+</body>
+
+</html>
