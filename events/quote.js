@@ -8,7 +8,7 @@ function deleteQuote(e) {
   selectedQuote = currentQuote;
 
   if (selectedQuote !== null) {
-    if (selectedQuote.classList.contains("quote-close")) {
+    if (selectedQuote.className == "quote-close") {
       console.log(selectedQuote.parentElement);
       selectedQuote.parentElement.remove();
     }
